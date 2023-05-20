@@ -54,216 +54,71 @@ export default function Registration() {
   return (
     <>
       <MyLayout title="Registration Doctor" />
-
-      <div class="px-72 py-5 mt-20">
-        <section className="text-gray-600 body-font mx-auto ">
-          <div className="bg-blue-300 rounded-lg p-8 md:ml-auto w-auto mt-10 md:mt-0">
-          
-          <form class="mx-auto max-w-lg" onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
-            <h2 className="text-gray-900 text-lg font-medium title-font mb-5">Registration</h2>
-
-              <div class="grid grid-cols-2 gap-2">
-                <div>
-                  <label class="block text-gray-700 font-sm mb-0" for="name">
-                    Name
-                  </label>
-                  <input
-                    class="input-field px-4 rounded-sm"
-                    id="name"
-                    placeholder=" Enter your name"
-                    type="text"
-                    {...register("name", { required: true })}
-                  />
-                  {errors.name && (
-                    <p class="text-red-600 text-sm mt-1">
-                      {errors.name.type === "required"
-                        ? "Name is required"
-                        : "Invalid name"}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label class="block text-gray-700 font-sm mb-0" for="age">
-                    Age
-                  </label>
-                  <input
-                    class="input-field px-4 px-4 rounded-sm"
-                    id="age"
-                    placeholder=" Enter your age"
-                    type="text"
-                    {...register("age", { required: true })}
-                  />
-                  {errors.age && (
-                    <p class="text-red-600 text-sm mt-1">
-                      {errors.age.type === "required"
-                        ? "Age is required"
-                        : "Invalid age"}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label
-                    class="block text-gray-700 font-sm mb-0"
-                    for="collegeName"
-                  >
-                    College Name
-                  </label>
-                  <input
-                    class="input-field px-4 rounded-sm"
-                    id="collegeName"
-                    placeholder=" Enter your college name"
-                    type="text"
-                    {...register("collegeName", { required: true })}
-                  />
-                  {errors.collegeName && (
-                    <p class="text-red-600 text-sm mt-1">
-                      College Name is required
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label
-                    class="block text-gray-700 font-sm mb-0"
-                    for="specialist"
-                  >
-                    Specialist
-                  </label>
-                  <input
-                    class="input-field px-4 rounded-sm"
-                    id="specialist"
-                    placeholder=" Enter your specialist"
-                    type="text"
-                    {...register("specialist", { required: true })}
-                  />
-                  {errors.specialist && (
-                    <p class="text-red-600 text-sm mt-1">
-                      Specialist is required
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label
-                    class="block text-gray-700 font-sm mb-0"
-                    for="phoneNumber"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    class="input-field px-4 rounded-sm"
-                    id="phoneNumber"
-                    placeholder=" Enter your phone number"
-                    type="text"
-                    {...register("phoneNumber", { required: true })}
-                  />
-                  {errors.phoneNumber && (
-                    <p class="text-red-600 text-sm mt-1">
-                      Phone Number is required
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label class="block text-gray-700 font-sm mb-0" for="email">
-                    Email
-                  </label>
-                  <input
-                    class="input-field px-4 rounded-sm"
-                    id="email"
-                    placeholder=" Enter your email"
-                    type="email"
-                    {...register("email", { required: true })}
-                  />
-                  {errors.email && (
-                    <p class="text-red-600 text-sm mt-1">
-                      {errors.email.type === "required"
-                        ? "Email is required"
-                        : "Invalid email address"}
-                    </p>
-                  )}
-                </div>
-                {/* {emailExists && (
-                <p className="text-red-600 text-sm mt-1">
-                  Email already exists
-                </p>
-              )} */}
-
-                <div class="flex flex-col md:flex-row md:space-x-4">
-                  <div class="w-full md:w-1/2">
-                    <label
-                      htmlFor="password"
-                      class="block text-gray-700 font-sm mb-0 "
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      id="password"
-                      placeholder=" Enter your password"
-                      {...register("password", { required: true })}
-                      class="mt-1 input-field px-4 rounded-sm"
-                    />
-                    {errors.password && (
-                      <p class="mt-1 text-red-600 text-xs">
-                        {errors.password.type === "required"
-                          ? "Password is required"
-                          : "Invalid password"}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label for="myfile">Upload Image:</label>
-                  <input
-                    type="file"
-                    id="myfile"
-                    name="myfile"
-                    {...register("myfile", {
-                      required: true,
-                      validate: validateFile,
-                    })}
-                    accept=".png, .jpg, .jpeg, .gif"
-                  />
-                  {errors.myfile && (
-                    <p>
-                      {" "}
-                      {errors.myfile.type === "required" ? (
-                        <p
-                          id="outlined_error_help"
-                          class="mt-2 text-xs text-red-600 dark:text-red-400"
-                        >
-                          <span class="font-medium">file is required</span>
-                        </p>
-                      ) : (
-                        <p
-                          id="outlined_error_help"
-                          class="mt-2 text-xs text-red-600 dark:text-red-400"
-                        >
-                          <span class="font-medium">invalid file</span>
-                        </p>
-                      )}
-                    </p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  className="text-white font-sm bg-blue-500 border-0 py-1 px-1 focus:outline-none hover:bg-blue-600 rounded text-lg"
-                >
-                  Submit
-                </button>
-              </div>
-              {success && (
-                <p className="text-green-600 text-sm mt-1">{success}</p>
-              )}
-            </form>
+      <div className="h-screen flex justify-center items-center bg-gray-200">
+      
+      <form className="w-full max-w-lg bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-7" onSubmit={handleSubmit(onSubmit)} enctype="multipart/form-data">
+        <h1 class="text-gray-900 text-center text-lg md:text-xl lg:text-1xl font-medium title-font mb-4">Doctor's Registration</h1>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="name">Name</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" placeholder="Enter your name" type="text" {...register("name", { required: true })}/>
+            {errors.name && (<p class="text-red-600 text-sm mt-1">{errors.name.type === "required" ? "Name is required" : "Invalid name"}</p>)}
           </div>
-        </section>
-      </div>
-    </>
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="age">Age</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" placeholder="Enter your age" type="text" {...register("age", { required: true })}/>
+            {errors.age && (<p class="text-red-600 text-sm mt-1">{errors.age.type === "required" ? "Age is required" : "Invalid age"}</p>)}
+          </div>
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="collegeName">College Name</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="collegeName" placeholder="Enter your college name" type="text" {...register("collegeName", { required: true })}/>
+            {errors.collegeName && (<p class="text-red-600 text-sm mt-1">College Name is required</p>)}
+          </div>
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="specialist">Specialist</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="specialist" placeholder="Enter your specialist" type="text" {...register("specialist", { required: true })}/>
+            {errors.specialist && (<p class="text-red-600 text-sm mt-1">Specialist is required</p>)}
+          </div>
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="phoneNumber">Phone Number</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" placeholder="Enter your phone number" type="text" {...register("phoneNumber", { required: true })}/>
+            {errors.phoneNumber && (<p class="text-red-600 text-sm mt-1">Phone Number is required</p>)}
+          </div>
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="email">Email</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" placeholder="Enter your email" type="email" {...register("email", { required: true })}/>
+            {errors.email && (<p class="text-red-600 text-sm mt-1">{errors.email.type === "required" ? "Email is required" : "Invalid email address"}</p>)}
+          </div>
+          {emailExists && (
+            <p class="text-red-600 text-sm mt-1">Email already exists</p>
+          )}
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="password">Password</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" placeholder="Enter your password" type="password" {...register("password", { required: true })}/>
+            {errors.password && (<p class="text-red-600 text-sm mt-1">{errors.password.type === "required" ? "Password is required" : "Invalid password"}</p>)}
+          </div>
+          <div>
+            <label class="block text-gray-700 font-sm mb-1" for="myfile">Upload Image:</label>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="file" id="myfile" name="myfile" {...register("myfile", { required: true, validate: validateFile })} accept=".png, .jpg, .jpeg, .gif"/>
+            {errors.myfile && (
+              <p class="text-red-600 text-sm mt-1">
+                {errors.myfile.type === "required" ? (
+                  <span class="font-medium">File is required</span>
+                ) : (
+                  <span class="font-medium">Invalid file</span>
+                )}
+              </p>
+            )}
+          </div>
+          <div className="flex items-center justify-center ml-52">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
+          </div>
+        </div>
+        {success && (
+          <p class="text-green-600 text-sm mt-4">{success}</p>
+        )}
+      </form>
+    </div>
+</>
   );
 }

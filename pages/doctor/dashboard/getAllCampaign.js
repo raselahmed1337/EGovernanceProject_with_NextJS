@@ -13,12 +13,12 @@ export default function GetAllDoctors({ data, totalDoctors }) {
 
       <div className="mb-28 bg-gray-200 relative flex justify-center items-center h-screen">
   <div className="flex justify-center flex-col items-center">
-    <a className="text-center mb-4 text-bold">Total Available Doctors : {totalDoctors}</a>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+    <a className="text-center mb-4 text-bold shadow focus:shadow-outline">Total Available Doctors : {totalDoctors}</a>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 ">
       {data.map((item) => (
         <div
           key={item.id}
-          className="rounded-lg p-4 flex flex-col items-center justify-center bg-blue-500 hover:bg-blue-700 text-white"
+          className="shadow focus:shadow-outline rounded-lg p-4 flex flex-col items-center justify-center bg-blue-500 hover:bg-blue-700 text-white"
         >
           <Link className="mb-5" href={"/doctor/dashboard/campaign/" + item.id}>
             {item.campaignName}

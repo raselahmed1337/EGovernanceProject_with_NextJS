@@ -24,7 +24,7 @@ const DoctorDashboard = () => {
         <div className="w-full max-w-4xl p-8">
           <div className="grid grid-cols-2 gap-8">
             <div className="bg-white rounded-lg p-8">
-              <h2 className="text-xl font-bold mb-4">Upcoming Appointments</h2>
+              <h2 className="text-xl font-bold mb-4 ml-24">Upcoming Appointments</h2>
               <BarChart width={400} height={300} data={upcomingAppointments}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="patientName" />
@@ -36,19 +36,19 @@ const DoctorDashboard = () => {
               </BarChart>
             </div>
             <div className="bg-white rounded-lg p-8">
-              <h2 className="text-xl font-bold mb-4">Patients List</h2>
+              <h2 className="text-xl font-bold ml-5 mb-4 text-center ">Patients List</h2>
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="px-2 py-2">Name</th>
-                    <th className="px-2 py-2">Age</th>
+                    <th className="px-2 py-2 text-center ">Patient's Name</th>
+                    <th className="px-2 py-2 text-center">Age</th>
                   </tr>
                 </thead>
                 <tbody>
                   {patientsList.map((patient) => (
                     <tr key={patient.id}>
-                      <td className="px-4 py-2">{patient.name}</td>
-                      <td className="px-4 py-2">{patient.age}</td>
+                      <td className="px-4 py-2 text-center">{patient.name}</td>
+                      <td className="px-4 py-2 text-center">{patient.age}</td>
                     </tr>
                   ))}
                 </tbody>

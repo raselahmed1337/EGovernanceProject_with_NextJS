@@ -1,6 +1,5 @@
 import Header from "./header";
 import Link from "next/link";
-import Image from "next/image";
 import Footer from "./footer";
 import Session from "./session";
 
@@ -12,13 +11,14 @@ export default function MyLayout(props) {
       <nav className="fixed top-0 left-0 w-full bg-blue-900 py-4 z-40">
         <div className="container flex flex-wrap justify-end items-center">
           
-          <Link href="/doctor/" className="absolute left-3"> <Image src="/giphy.gif" alt="me" width="35" height="35" /></Link>
+          <Link href="/doctor/" className="absolute left-3"> <img src="/giphy.gif" alt="me" width="35" height="35" /></Link>
           <Session/>
-          <Link href="/doctor" className="text-white mr-4 font-bold hover:text-gray-500">Home</Link>
-          <Link href="/doctor/aboutDoctor" className="text-white mr-4 font-bold hover:text-gray-500">About</Link>
-          <Link href="/doctor/blogs/" className="text-white mr-4 font-bold hover:text-gray-500">Blog</Link>
-          <Link href="/doctor/getalldoctors/" className="text-white mr-4 font-bold hover:text-gray-500">Doctors</Link>
-          <Link href="/doctor/getallCampaigns/" className="text-white mr-4 font-bold hover:text-gray-500">Campaign</Link>
+          <Link href="/doctor" className="text-white mr-5 font-bold hover:text-gray-500">Home</Link>
+          <Link href="/doctor/aboutDoctor" className="text-white mr-5 font-bold hover:text-gray-500">About</Link>
+          <Link href="/doctor/blogs/" className="text-white mr-5 font-bold hover:text-gray-500">Blog</Link>
+          <Link href="/doctor/getalldoctors/" className="text-white mr-5 font-bold hover:text-gray-500">Doctors</Link>
+          <Link href="/doctor/getallCampaigns/" className="text-white mr-5 font-bold hover:text-gray-500">Campaign</Link>
+          <Link href="#" className="text-white mr-5 font-bold hover:text-gray-500">Make Appointment</Link>
 
 
 

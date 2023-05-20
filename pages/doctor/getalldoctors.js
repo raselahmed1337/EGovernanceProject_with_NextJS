@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import MyLayout from "./component/layout";
 
@@ -11,7 +12,7 @@ export default function GetAllDoctors({ data }) {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="bg-black-200 rounded-lg p-4 flex flex-col items-center justify-center bg-blue-500 hover:bg-blue-700 text-white transition-all duration-500 transform hover:-translate-x-2"
+                className="bg-black-200 rounded-lg p-4 flex flex-col items-center justify-center bg-blue-300 hover:bg-blue-700 text-white transition-all duration-500 transform hover:-translate-x-2"
               >
                 <img
                   className="w-48 h-48 object-cover rounded-full"
