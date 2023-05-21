@@ -8,17 +8,17 @@ export default function MyLayout(props) {
     <>
       <Header title={props.title} />
 
-      <nav className="fixed top-0 left-0 w-full bg-blue-900 py-4 z-40">
+      <nav className="fixed top-0 left-0 w-full bg-blue-900 py-4 z-40 shadow shadow-full focus:shadow-outline bg-gradient-to-r from-cyan-700 to-blue-900">
         <div className="container flex flex-wrap justify-end items-center">
           
           <Link href="/doctor/" className="absolute left-3"> <img src="/giphy.gif" alt="me" width="35" height="35" /></Link>
           <Session/>
-          <Link href="/doctor" className="text-white mr-5 font-bold hover:text-gray-500">Home</Link>
-          <Link href="/doctor/aboutDoctor" className="text-white mr-5 font-bold hover:text-gray-500">About</Link>
-          <Link href="/doctor/blogs/" className="text-white mr-5 font-bold hover:text-gray-500">Blog</Link>
-          <Link href="/doctor/getalldoctors/" className="text-white mr-5 font-bold hover:text-gray-500">Doctors</Link>
-          <Link href="/doctor/getallCampaigns/" className="text-white mr-5 font-bold hover:text-gray-500">Campaign</Link>
-          <Link href="#" className="text-white mr-5 font-bold hover:text-gray-500">Make Appointment</Link>
+          <Link href="/doctor" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Home</Link>
+          <Link href="/doctor/aboutDoctor" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">About</Link>
+          <Link href="/doctor/blogs/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Blog</Link>
+          <Link href="/doctor/getalldoctors/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Doctors</Link>
+          <Link href="/doctor/getallCampaigns/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Campaign</Link>
+          <Link href="#" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Appointment</Link>
 
 
 

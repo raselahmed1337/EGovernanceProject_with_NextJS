@@ -52,13 +52,13 @@ export default function SignIn() {
 
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
-            <input type="checkbox" id="rememberMe" {...register('rememberMe')} className="h-4 w-4 text-blue-500 focus:ring-blue-600 border-gray-300 rounded"/>
+            <input type="checkbox" id="rememberMe" {...register('rememberMe')} className="accent-green-600 h-4 w-4 text-blue-500 focus:ring-blue-600 border-gray-300 rounded"/>
             <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-600">Remember Me</label>
           </div>
           <a href="#" className="text-sm text-blue-500 hover:underline">Forgot Password</a>
         </div>
         
-        <button type="submit" className="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg w-full">Sign In</button>
+        <button type="submit" className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg w-full">Sign In</button>
         {error && (
           <div>
             <p id="outlined_error_help" className="mt-2 text-xs text-red-600 dark:text-red-400">

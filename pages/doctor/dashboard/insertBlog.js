@@ -24,8 +24,9 @@ export default function InsertBlog() {
   return (
     <>
     <SessionCheck/>
+    <DoctorDrawer/>
       <MyLayout title="Write Blog"/>
-      <DoctorDrawer/>
+      
       <div className="h-screen flex justify-center items-center bg-gray-200">
   <form className="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-8" onSubmit={handleSubmit(onSubmit)}>
   <h2 class="text-gray-900 text-lg font-medium title-font mb-5 text-center ">Add Blog</h2>
@@ -84,7 +85,7 @@ export default function InsertBlog() {
       )}
     </div>
     <div className="flex items-center justify-center">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Post</button>
+      <button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Post</button>
     </div>
     {errorMessage && <p>{errorMessage}</p>}
   </form>

@@ -48,8 +48,9 @@ export default function AddCampaign() {
   return (
     <>
   <SessionCheck/>
+  <DoctorDrawer/>
       <MyLayout title="Add Campaign"/>
-      <DoctorDrawer/>
+      
       <div className="h-screen flex justify-center items-center bg-gray-200">
 
         <form className="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-7" onSubmit={handleSubmit(onSubmit)} enctype="multipart/form-data">
@@ -97,10 +98,12 @@ export default function AddCampaign() {
                 </p>
               )}
             </div>
+
             <div className="flex items-center justify-center ml-52">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit </button>
+              <button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit </button>
             </div>
           </div>
+          
           {success && (
             <p class="text-green-600 text-sm mt-1">{success}</p>
           )}

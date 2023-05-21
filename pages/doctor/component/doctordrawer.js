@@ -112,8 +112,8 @@ export default function DoctorDrawer() {
                 </Link>
               </li>
 
-              <li>
-              <Link
+<li>
+<Link
   href="/doctor/dashboard/sendmail"
   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
 >
@@ -134,9 +134,22 @@ export default function DoctorDrawer() {
     Send Mail
   </span>
 </Link>
+</li>
 
+<li>
+<Link
+  href="/doctor/dashboard/#"
+  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+>
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7.397V5a3 3 0 0 0-3-3H3a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3v-2.397M10 14.26V9.74M19 13l2.79-2.79M21.172 2.828l-2.828 2.828"/>
+</svg>
 
-              </li>
+  <span className="flex-1 ml-3 whitespace-nowrap">
+    Video Call
+  </span>
+</Link>
+</li>
             </ul>
           </div>
         </aside>

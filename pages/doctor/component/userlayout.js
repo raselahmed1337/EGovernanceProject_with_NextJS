@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import SessionCheck from "./sessioncheck";
 import MyLayout from "./layout";
+import DoctorDrawer from "./doctordrawer";
 
 export default function UserLayout(props) {
 
@@ -53,8 +54,9 @@ export default function UserLayout(props) {
     <>
       <SessionCheck />
       <MyLayout title={props.name} />
+
       <div className="py-28 bg-gray-200 p-8">
-        <div className="mx-auto w-72 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="mx-auto w-96 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div className="flex flex-col items-center pb-8">
             <img
               className="py-1 px-1 w-28 h-28 mb-0 rounded-full shadow-lg"
@@ -82,7 +84,7 @@ export default function UserLayout(props) {
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="shadow focus:shadow-outline p-1 focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
                   />
                 </div>
               </div>
@@ -101,7 +103,7 @@ export default function UserLayout(props) {
                     id="age"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
-                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="shadow focus:shadow-outline p-1 focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
                   />
                 </div>
               </div>
@@ -120,7 +122,7 @@ export default function UserLayout(props) {
                     id="collegeName"
                     value={collegeName}
                     onChange={(e) => setCollegeName(e.target.value)}
-                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="shadow focus:shadow-outline p-1 focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
                   />
                 </div>
               </div>
@@ -139,7 +141,7 @@ export default function UserLayout(props) {
                     id="specialist"
                     value={specialist}
                     onChange={(e) => setSpecialist(e.target.value)}
-                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="shadow focus:shadow-outline p-1 focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
                   />
                 </div>
               </div>
@@ -158,7 +160,7 @@ export default function UserLayout(props) {
                     id="phoneNumber"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="shadow focus:shadow-outline p-1 focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
                   />
                 </div>
               </div>
@@ -177,24 +179,18 @@ export default function UserLayout(props) {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
+                    className="shadow focus:shadow-outline p-1 focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-sm"
                   />
                 </div>
               </div>
             </form>
-
-            {/* <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{props.name}</h5>
-            <span className="text-sm text-gray-500 dark:text-gray-400">Specialist: {props.specialist}</span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">College Name: {props.collegeName}</span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">Age: {props.age}</span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">Email: {props.email}</span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">Phone Number: {props.phoneNumber}</span> */}
+            
             <div className="flex mt-4 space-x-3 md:mt-6">
               <button
                 href="#"
                 type="button"
                 onClick={handleUpdateDoctor}
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Update
               </button>
@@ -202,7 +198,7 @@ export default function UserLayout(props) {
                 href="#"
                 type="button"
                 onClick={handleDeleteDoctor}
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
+                className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
               >
                 Delete
               </button>

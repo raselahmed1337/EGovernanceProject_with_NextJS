@@ -16,7 +16,7 @@ export default function GetAllCampaigns({ data }) {
   return (
     <>
       <MyLayout title="All Campaigns" />
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gray-300">
         <div className="w-full">
           <div className="flex flex-wrap">
             {data.map((item, index) => (
@@ -25,7 +25,7 @@ export default function GetAllCampaigns({ data }) {
                 className={`w-full p-4 ${index === currentCampaignIndex ? 'block' : 'hidden'}`}
               >
                 <div className="fixed inset-0 flex items-center justify-center mb-10">
-                  <div className="bg-gray-100 flex items-center justify-center rounded-lg shadow-md p-12 transition-transform transform-gpu hover:scale-105">
+                  <div className="transition ease-in-out delay-150 hover:-translate-y-1 duration-700 ... bg-gray-100 flex items-center justify-center shadow rounded-2xl shadow-md p-2 mr-12 ml-12 transition-transform transform-gpu hover:scale-105">
                     <img
                       src={`https://egovernanceprojectwithnestjs-production.up.railway.app/doctor/getcampaignimage/${item.filename}`}
                       alt="campaign"
@@ -38,7 +38,7 @@ export default function GetAllCampaigns({ data }) {
                         <h3 className="text-lg font-semibold mb-1">{item.campaignName}</h3>
                         <li className="text-sm text-gray-600 mb-1">Speciality: {item.campaignSpeciality}</li>
                         <li className="text-sm text-gray-600 mb-1">Date: {item.campaignDate}</li>
-                        <li className="text-sm text-gray-600 mb-1">Description: {item.campaignDescription}</li>
+                        <li className="text-sm text-gray-600 mb-1 text-justify">Description: {item.campaignDescription}</li>
                         <li className="text-sm text-gray-600 mb-1">Age Limit: {item.ageLimit}</li>
                       </ul>
                     </div>

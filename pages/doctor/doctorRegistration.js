@@ -54,9 +54,9 @@ export default function Registration() {
   return (
     <>
       <MyLayout title="Registration Doctor" />
-      <div className="h-screen flex justify-center items-center bg-gray-200">
+      <div className="h-screen flex justify-center items-center bg-gray-200 ">
       
-      <form className="w-full max-w-lg bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-7" onSubmit={handleSubmit(onSubmit)} enctype="multipart/form-data">
+      <form className="w-full max-w-lg bg-blue-300 shadow-md rounded-2xl px-8 pt-6 pb-8 mb-7 " onSubmit={handleSubmit(onSubmit)} enctype="multipart/form-data">
         <h1 class="text-gray-900 text-center text-lg md:text-xl lg:text-1xl font-medium title-font mb-4">Doctor's Registration</h1>
         <div class="grid grid-cols-2 gap-3">
           <div>
@@ -111,7 +111,7 @@ export default function Registration() {
             )}
           </div>
           <div className="flex items-center justify-center ml-52">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
+            <button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
           </div>
         </div>
         {success && (

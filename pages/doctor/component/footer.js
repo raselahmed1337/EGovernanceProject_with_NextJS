@@ -4,7 +4,7 @@ export default function Footer() {
   return (
   <>
     <footer
-      className="fixed bottom-0 left-0 w-full bg-white rounded-lg shadow dark:bg-gray-900"
+      className="fixed bottom-0 left-0 w-full bg-white rounded-sm  shadow focus:shadow-outline dark:bg-gray-900"
       style={{ zIndex: 999 }}
     >
       <div className="mb-2 ml-full">

@@ -9,8 +9,9 @@ export default function DoctorDashboard() {
   return (
     <>
     <SessionCheck/>
+    <DoctorDrawer />
       <MyLayout title="Doctor Dashboard"/>
-      <DoctorDrawer />
+      
       
       <div className="flex flex-wrap md:flex-nowrap">
   <div className="mt-20 w-full md:w-1/2 ml-auto">

@@ -42,8 +42,9 @@ export default function SendMail() {
   return (
     <>
     <SessionCheck/>
-    <MyLayout title="Send Mail"/>
     <DoctorDrawer/>
+    <MyLayout title="Send Mail"/>
+   
     <div className="flex justify-center items-center h-screen bg-gray-100">
   <form className="bg-white shadow-md rounded px-10 pt-6 pb-8 mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hovar:">
     <div className="mb-4">
@@ -85,7 +86,7 @@ export default function SendMail() {
     </div>
     <div className="flex items-center justify-center">
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         type="submit"
         onClick={handleSubmit}
       >

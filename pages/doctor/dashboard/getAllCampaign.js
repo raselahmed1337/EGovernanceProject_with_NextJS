@@ -8,8 +8,9 @@ export default function GetAllDoctors({ data, totalDoctors }) {
   return (
     <>
     <SessionCheck/>
+    <DoctorDrawer/>
       <MyLayout title="All Campaigns" />
-      <DoctorDrawer />
+
 
       <div className="mb-28 bg-gray-200 relative flex justify-center items-center h-screen">
   <div className="flex justify-center flex-col items-center">
@@ -18,7 +19,7 @@ export default function GetAllDoctors({ data, totalDoctors }) {
       {data.map((item) => (
         <div
           key={item.id}
-          className="shadow focus:shadow-outline rounded-lg p-4 flex flex-col items-center justify-center bg-blue-500 hover:bg-blue-700 text-white"
+          className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... shadow focus:shadow-outline rounded-lg p-4 flex flex-col items-center justify-center bg-blue-500 hover:bg-blue-700 text-white"
         >
           <Link className="mb-5" href={"/doctor/dashboard/campaign/" + item.id}>
             {item.campaignName}

@@ -10,16 +10,16 @@ const DoctorDashboard = () => {
   ];
 
   const patientsList = [
-    { id: 1, name: "John Doe", age: 35 },
-    { id: 2, name: "Jane Smith", age: 42 },
+    { id: 1, name: "John Doe", age: 35, phone:"01882156383" },
+    { id: 2, name: "Jane Smith", age: 42, phone:"01982156383"},
   ];
 
   return (
     <>
-      <SessionCheck />
-      <MyLayout title="Doctor Dashboard" />
-
+      <SessionCheck />      
       <DoctorDrawer />
+      
+      <MyLayout title="Doctor Dashboard" />
       <div className="flex justify-center py-8">
         <div className="w-full max-w-4xl p-8">
           <div className="grid grid-cols-2 gap-8">
@@ -42,6 +42,7 @@ const DoctorDashboard = () => {
                   <tr>
                     <th className="px-2 py-2 text-center ">Patient's Name</th>
                     <th className="px-2 py-2 text-center">Age</th>
+                    <th className="px-2 py-2 text-center">Phone</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@ const DoctorDashboard = () => {
                     <tr key={patient.id}>
                       <td className="px-4 py-2 text-center">{patient.name}</td>
                       <td className="px-4 py-2 text-center">{patient.age}</td>
+                      <td className="px-4 py-2 text-center">{patient.phone}</td>
                     </tr>
                   ))}
                 </tbody>

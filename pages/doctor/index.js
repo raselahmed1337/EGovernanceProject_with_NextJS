@@ -6,13 +6,14 @@ export default function Home() {
       <MyLayout title="Home" />
       
 
-      <div className="text-center text-bold bg-gray-200 py-20">
+      <div className="text-center text-bold bg-gray-200 py-16">
         <div className="container mx-auto px-8 lg:px-52 flex items-center justify-center h-full">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-3xl text-black font-bold mb-2 animate-pulse">
               ...
             </h1>
             <img
+            className="shadow focus:shadow-outline shadow-lg"
               src="/doctorhome.gif"
               alt="My GIF"
               width={600}
