@@ -12,7 +12,7 @@ export default function GetAllDoctors({ data, totalDoctors }) {
       <MyLayout title="All Doctors" />
       
 
-      <div className="mb-28 bg-gray-200 relative flex justify-center items-center h-screen">
+<div className="mb-28 bg-gray-200 relative flex justify-center items-center h-screen">
   <div className="flex justify-center flex-col items-center">
     <a className="text-center mb-4 text-bold">Total Available Doctors : {totalDoctors}</a>
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">

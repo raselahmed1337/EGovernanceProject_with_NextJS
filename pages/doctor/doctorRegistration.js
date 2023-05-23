@@ -42,6 +42,7 @@ export default function Registration() {
       setSuccess("Registration successful");
       setEmailExists(false); // Reset the email existence state
       reset();
+      router.push('/doctor/signIn');
     } catch (error) {
       console.log(error.response.data.message);
       if (error.response.data.message === "Email already exists") {
@@ -97,6 +98,7 @@ export default function Registration() {
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" placeholder="Enter your password" type="password" {...register("password", { required: true })}/>
             {errors.password && (<p class="text-red-600 text-sm mt-1">{errors.password.type === "required" ? "Password is required" : "Invalid password"}</p>)}
           </div>
+          
           <div>
             <label class="block text-gray-700 font-sm mb-1" for="myfile">Upload Image:</label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="file" id="myfile" name="myfile" {...register("myfile", { required: true, validate: validateFile })} accept=".png, .jpg, .jpeg, .gif"/>
@@ -110,6 +112,7 @@ export default function Registration() {
               </p>
             )}
           </div>
+
           <div className="flex items-center justify-center ml-52">
             <button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 duration-700 ... bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
           </div>

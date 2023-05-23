@@ -57,14 +57,14 @@ const handleSignOut = async (event) => {
           {email !== null ? (
         <>
           <div className="flex md:order-2"> 
-          <Link href="/doctor/dashboard/insertBlog"className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500" >Add Blog</Link>
-          <Link href="/doctor/dashboard/addCampaign"className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500" >Add Campaign</Link>
+          <Link href="/doctor/dashboard/insertBlog"className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500" >Add blog</Link>
+          <Link href="/doctor/dashboard/addCampaign"className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500" >Add campaign</Link>
            <Link href="/doctor/dashboard/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500" >Dashboard</Link>
 
           <button href="#" onClick={toggleDoctorDetails} onMouseOver={getDoctorDetails}
           className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-4 font-bold hover:text-gray-500"
           >
-          My Profile     
+          My profile     
           </button>
 
           {doctorDetails && (

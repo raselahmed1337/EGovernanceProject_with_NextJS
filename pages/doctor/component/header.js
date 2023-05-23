@@ -5,7 +5,7 @@ export default function MyHeader(props) {
         <>
         <Head>
             <title>{props.title}</title>
-            <link rel="icon" type="image/x-icon" href="giphy.gif"></link>
+            <link rel="icon" type="image/x-icon" href="/giphy.gif"></link>
         </Head>
         </>
     )

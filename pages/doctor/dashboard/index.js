@@ -1,66 +1,82 @@
-import MyLayout from "../component/layout";
+import Link from "next/link";
+import axios from "axios";
+import MyLayout from '../component/layout';
 import DoctorDrawer from "../component/doctordrawer";
 import SessionCheck from "../component/sessioncheck";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
-const DoctorDashboard = () => {
-  const upcomingAppointments = [
-    { id: 1, patientName: "John Doe", date: "2023-05-15", time: "10:00 AM" },
-    { id: 2, patientName: "Jane Smith", date: "2023-05-16", time: "2:30 PM" },
-  ];
-
-  const patientsList = [
-    { id: 1, name: "John Doe", age: 35, phone:"01882156383" },
-    { id: 2, name: "Jane Smith", age: 42, phone:"01982156383"},
-  ];
-
+export default function GetAllAppointments({ data }) {
   return (
     <>
-      <SessionCheck />      
-      <DoctorDrawer />
+    <SessionCheck/>
+    <DoctorDrawer />
+      <MyLayout title="All Patients" />
       
-      <MyLayout title="Doctor Dashboard" />
-      <div className="flex justify-center py-8">
-        <div className="w-full max-w-4xl p-8">
-          <div className="grid grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg p-8">
-              <h2 className="text-xl font-bold mb-4 ml-24">Upcoming Appointments</h2>
-              <BarChart width={400} height={300} data={upcomingAppointments}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="patientName" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="date" fill="#8884d8" />
-                <Bar dataKey="time" fill="#82ca9d" />
-              </BarChart>
-            </div>
-            <div className="bg-white rounded-lg p-8">
-              <h2 className="text-xl font-bold ml-5 mb-4 text-center ">Patients List</h2>
-              <table className="w-full">
-                <thead>
-                  <tr>
-                    <th className="px-2 py-2 text-center ">Patient's Name</th>
-                    <th className="px-2 py-2 text-center">Age</th>
-                    <th className="px-2 py-2 text-center">Phone</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {patientsList.map((patient) => (
-                    <tr key={patient.id}>
-                      <td className="px-4 py-2 text-center">{patient.name}</td>
-                      <td className="px-4 py-2 text-center">{patient.age}</td>
-                      <td className="px-4 py-2 text-center">{patient.phone}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
 
-export default DoctorDashboard;
+      <div className="relative mb-20 mt-1 ml-48 bg-gray-200 flex justify-center items-center h-screen">
+  <div className="flex justify-center flex-col items-center">
+    <h1 className="text-lg font-bold mb-2">Recent Patients Appointment List</h1>
+    <table className="ml-12 min-w-full divide-y divide-gray-200">
+      <thead className="bg-gray-50">
+        <tr>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Patient Name
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Age
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Gender
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Time
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Date
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Email
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Emargency
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Doctor Name
+          </th>
+          <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Doctor Email
+          </th>
+        </tr>
+      </thead>
+      <tbody className="bg-white divide-y divide-gray-200">
+        {data.map((item) => (
+          <tr key={item.id}>
+            <td className="px-4 py-4 whitespace">
+              <Link href={"/doctor/dashboard/patients/" + item.id} className="text-blue-500 hover:text-blue-700">
+                {item.patientName}
+              </Link>
+            </td>
+           
+            <td className="px-2 py-4 whitespace-nowrap">{item.patientAge}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.patientGender}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.patientAppointmentTime}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.patientAppointmentDate}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.patientEmail}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.patientEmargencyContact}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.doctorName}</td>
+            <td className="px-2 py-4 whitespace-nowrap">{item.doctorEmail}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</>
+  );
+}
+
+export async function getServerSideProps() {
+  const response = await axios.get("https://egovernanceprojectwithnestjs-production.up.railway.app/doctor/allAppointments/");
+  const data = await response.data;
+  return { props: { data } };
+}

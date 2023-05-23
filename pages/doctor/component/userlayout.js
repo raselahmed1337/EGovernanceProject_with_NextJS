@@ -53,6 +53,7 @@ export default function UserLayout(props) {
   return (
     <>
       <SessionCheck />
+      <DoctorDrawer/>
       <MyLayout title={props.name} />
 
       <div className="py-28 bg-gray-200 p-8">

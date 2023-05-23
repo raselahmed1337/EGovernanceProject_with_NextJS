@@ -7,12 +7,12 @@ export default function GetAllDoctors({ data }) {
     <>
       <MyLayout title="All Doctors" />
       <div className="bg-gray-200 ">
-        <div className="py-72 pt-28 pb-25 flex flex-row-right justify-center items-center scroll-smooth hover:scroll-auto shadow focus:shadow-outline">
+        <div className="py-96 pt-28 pb-25 flex flex-row-right justify-center items-center scroll-smooth hover:scroll-auto shadow focus:shadow-outline">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {data.map((item) => (
               <div
                 key={item.id}
-                className=" transition ease-in-out delay-150 hover:-translate-y-1 duration-700 ... bg-black-200 shadow rounded-2xl p-4 flex flex-col items-center justify-center bg-blue-300 hover:bg-blue-700 text-white transition-all duration-500 transform hover:-translate-x-2"
+                className=" transition ease-in-out delay-150 hover:-translate-y-1 duration-700 ... shadow rounded-2xl p-4 flex flex-col items-center justify-center text-white bg-blue-500 hover:text-cyan hover:bg-blue-700 shadow shadow-full focus:shadow-outline bg-gradient-to-r from-cyan-700 to-blue-900 transition-all duration-500 transform  hover:-translate-x-2"
               >
                 <img
                   className="w-48 h-48 object-cover rounded-full"
