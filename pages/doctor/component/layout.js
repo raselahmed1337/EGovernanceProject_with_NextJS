@@ -9,21 +9,22 @@ export default function MyLayout(props) {
       <Header title={props.title} />
 
       <nav className="fixed top-0 left-0 w-full bg-blue-900 py-4 z-40 shadow shadow-full focus:shadow-outline bg-gradient-to-r from-cyan-700 to-blue-900">
-        <div className="flex flex-wrap justify-end items-end max-h-auto max-w-auto mr-2">
-          
-          <Link href="/doctor/" className="absolute left-3"><img src="/giphy.gif" alt="me" width="35" height="35" /></Link>
-          
-          <Link href="/doctor" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Home</Link>
-          <Link href="/doctor/aboutDoctor" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">About</Link>
-          <Link href="/doctor/blogs/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Blog</Link>
-          <Link href="/doctor/getalldoctors/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Doctors</Link>
-          <Link href="/doctor/getallCampaigns/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Campaign</Link>
-          <Link href="/doctor/makeAppointment/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Appointment</Link>
-          <Session/>
+  <div className="flex flex-wrap justify-end items-end max-h-auto max-w-auto mr-2">
+    <Link href="/doctor/" className="absolute left-2 flex items-center">
+      <img src="/giphy.gif" alt="me" width="30" height="30" className="mr-1" />
+      <span className="text-white text-lg font-bold">EGovernance</span>
+    </Link>
+    
+    <Link href="/doctor" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Home</Link>
+    <Link href="/doctor/aboutDoctor" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">About</Link>
+    <Link href="/doctor/blogs/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Blog</Link>
+    <Link href="/doctor/getalldoctors/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Doctors</Link>
+    <Link href="/doctor/getallCampaigns/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Campaign</Link>
+    <Link href="/doctor/makeAppointment/" className="transition ease-in-out delay-150 text-white hover:-translate-y-1 hover:scale-100 duration-700 ... text-white mr-5 font-bold hover:text-gray-500">Appointment</Link>
+    <Session/>
+  </div>
+</nav>
 
-
-        </div>
-      </nav>
 
       <main></main>
       <div

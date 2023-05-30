@@ -104,7 +104,7 @@ export default function CampaignLayout(props) {
             <label htmlFor="campaignDate" className="block text-gray-700 font-sm mb-0">Campaign Date</label>
             <div className="mt-1">
               <input
-                type="text"
+                type="date"
                 name="campaignDate"
                 id="campaignDate"
                 value={updatedCampaignDate}

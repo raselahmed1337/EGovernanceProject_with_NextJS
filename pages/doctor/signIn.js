@@ -33,8 +33,9 @@ export default function SignIn() {
     <>
       <MyLayout title="Sign In" />
       <div className="h-screen flex justify-center items-center bg-gray-200">
-    <form className="w-full max-w-lg bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-7" onSubmit={handleSubmit(onSubmit)}>
-    <h2 class="text-gray-900 text-lg font-medium title-font mb-5 text-center ">Doctor's Login</h2>
+  
+      <form className="w-full max-w-lg bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-7" onSubmit={handleSubmit(onSubmit)}>
+        <h2 class="text-gray-900 text-lg font-medium title-font mb-5 text-center ">Doctor's Login</h2>
         
         {/* Email */}
         <div className="relative mb-4">
